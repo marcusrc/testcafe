@@ -3,6 +3,7 @@ var EventEmitter = require('events').EventEmitter;
 var util         = require('util');
 var Promise      = require('pinkie');
 var chunk        = require('lodash').chunk;
+var sortBy       = require('lodash').sortBy;
 var Reporter     = require('../../lib/reporter');
 
 
@@ -122,6 +123,9 @@ describe('Reporter', function () {
             },
             ctx: {
                 account: 'chromeAccountTest1'
+            },
+            fixtureCtx: {
+                tag: 'fixture1test1'
             }
         },
 
@@ -137,6 +141,9 @@ describe('Reporter', function () {
             ],
             ctx: {
                 tag: 'chrome'
+            },
+            fixtureCtx: {
+                tag: 'fixture1test2'
             }
         },
 
@@ -157,6 +164,9 @@ describe('Reporter', function () {
                         browser: 'chrome',
                     }
                 ]
+            },
+            fixtureCtx: {
+                tag: 'fixture1test3'
             }
         },
 
@@ -166,7 +176,10 @@ describe('Reporter', function () {
             unstable:          false,
             browserConnection: browserConnectionMocks[0],
             errs:              [],
-            ctx:               {}
+            ctx:               {},
+            fixtureCtx:        {
+                tag: 'fixture2test1'
+            }
         },
 
         //fixture2test2
@@ -175,7 +188,10 @@ describe('Reporter', function () {
             unstable:          false,
             browserConnection: browserConnectionMocks[0],
             errs:              [],
-            ctx:               {}
+            ctx:               {},
+            fixtureCtx:        {
+                tag: 'fixture2test2'
+            }
         },
 
         //fixture3test1
@@ -184,7 +200,10 @@ describe('Reporter', function () {
             unstable:          false,
             browserConnection: browserConnectionMocks[0],
             errs:              [],
-            ctx:               {}
+            ctx:               {},
+            fixtureCtx:        {
+                tag: 'fixture3test1'
+            }
         }
     ];
 
@@ -201,6 +220,9 @@ describe('Reporter', function () {
             },
             ctx: {
                 account: 'firefoxAccountTest1'
+            },
+            fixtureCtx: {
+                tag: 'fixture1test1'
             }
         },
 
@@ -213,6 +235,9 @@ describe('Reporter', function () {
             errs: [{ text: 'err1' }],
             ctx:  {
                 tag: 'firefox'
+            },
+            fixtureCtx: {
+                tag: 'fixture1test2'
             }
         },
 
@@ -233,6 +258,9 @@ describe('Reporter', function () {
                         browser: 'firefox',
                     }
                 ]
+            },
+            fixtureCtx: {
+                tag: 'fixture1test3'
             }
         },
 
@@ -242,7 +270,10 @@ describe('Reporter', function () {
             unstable:          false,
             browserConnection: browserConnectionMocks[1],
             errs:              [],
-            ctx:               {}
+            ctx:               {},
+            fixtureCtx:        {
+                tag: 'fixture2test1'
+            }
         },
 
         //fixture2test2
@@ -251,7 +282,10 @@ describe('Reporter', function () {
             unstable:          false,
             browserConnection: browserConnectionMocks[1],
             errs:              [],
-            ctx:               {}
+            ctx:               {},
+            fixtureCtx:        {
+                tag: 'fixture2test2'
+            }
         },
 
         //fixture3test1
@@ -260,7 +294,10 @@ describe('Reporter', function () {
             unstable:          true,
             browserConnection: browserConnectionMocks[1],
             errs:              [{ text: 'err1' }],
-            ctx:               {}
+            ctx:               {},
+            fixtureCtx:        {
+                tag: 'fixture3test1'
+            }
         }
     ];
 
@@ -374,7 +411,7 @@ describe('Reporter', function () {
                             takenOnFail:       false,
                             quarantineAttempt: 2
                         }],
-                        contexts: [
+                        ctx: [
                             {
                                 account:   'chromeAccountTest1',
                                 userAgent: 'Chrome'
@@ -383,7 +420,10 @@ describe('Reporter', function () {
                                 account:   'firefoxAccountTest1',
                                 userAgent: 'Firefox',
                             }
-                        ]
+                        ],
+                        fixtureCtx: {
+                            tag: 'fixture1test1'
+                        }
                     },
                     {
                         run: 'run-001'
@@ -428,7 +468,7 @@ describe('Reporter', function () {
                             takenOnFail:       true,
                             quarantineAttempt: null
                         }],
-                        contexts: [
+                        ctx: [
                             {
                                 tag:       'chrome',
                                 userAgent: 'Chrome'
@@ -437,7 +477,10 @@ describe('Reporter', function () {
                                 tag:       'firefox',
                                 userAgent: 'Firefox'
                             }
-                        ]
+                        ],
+                        fixtureCtx: {
+                            tag: 'fixture1test2'
+                        }
                     },
                     {
                         run: 'run-001'
@@ -456,7 +499,7 @@ describe('Reporter', function () {
                         quarantine:     null,
                         screenshotPath: null,
                         screenshots:    [],
-                        contexts:       [
+                        ctx:            [
                             {
                                 logs: [
                                     {
@@ -483,7 +526,10 @@ describe('Reporter', function () {
                                 ],
                                 userAgent: 'Firefox'
                             }
-                        ]
+                        ],
+                        fixtureCtx: {
+                            tag: 'fixture1test3'
+                        }
                     },
                     {
                         run: 'run-001'
@@ -512,14 +558,17 @@ describe('Reporter', function () {
                         quarantine:     null,
                         screenshotPath: null,
                         screenshots:    [],
-                        contexts:       [
+                        ctx:            [
                             {
                                 userAgent: 'Chrome'
                             },
                             {
                                 userAgent: 'Firefox'
                             }
-                        ]
+                        ],
+                        fixtureCtx: {
+                            tag: 'fixture2test1'
+                        }
                     },
                     {
                         run: 'run-001'
@@ -538,14 +587,17 @@ describe('Reporter', function () {
                         quarantine:     null,
                         screenshotPath: null,
                         screenshots:    [],
-                        contexts:       [
+                        ctx:            [
                             {
                                 userAgent: 'Chrome'
                             },
                             {
                                 userAgent: 'Firefox'
                             }
-                        ]
+                        ],
+                        fixtureCtx: {
+                            tag: 'fixture2test2'
+                        }
                     },
                     {
                         run: 'run-001'
@@ -578,14 +630,17 @@ describe('Reporter', function () {
                         quarantine:     null,
                         screenshotPath: null,
                         screenshots:    [],
-                        contexts:       [
+                        ctx:            [
                             {
                                 userAgent: 'Chrome'
                             },
                             {
                                 userAgent: 'Firefox'
                             }
-                        ]
+                        ],
+                        fixtureCtx: {
+                            tag: 'fixture3test1'
+                        }
                     },
                     {
                         run: 'run-001'
@@ -627,6 +682,8 @@ describe('Reporter', function () {
 
                 // NOTE: replace durationMs
                 args[1].durationMs = 74000;
+
+                args[1].ctx = sortBy(args[1].ctx, 'userAgent');
 
                 this.calls.push({ method: 'reportTestDone', args: args });
             },

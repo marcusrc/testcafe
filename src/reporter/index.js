@@ -32,7 +32,8 @@ export default class Reporter {
             unstable:       false,
             startTime:      null,
             testRunInfo:    null,
-            contexts:       []
+            featureCtx:     null,
+            ctx:            []
         };
     }
 
@@ -45,7 +46,8 @@ export default class Reporter {
             screenshots:    reportItem.screenshots,
             quarantine:     reportItem.quarantine,
             skipped:        reportItem.test.skip,
-            contexts:       sortBy(reportItem.contexts, 'userAgent')
+            fixtureCtx:     reportItem.fixtureCtx,
+            ctx:            reportItem.ctx
         };
     }
 
@@ -96,7 +98,7 @@ export default class Reporter {
             reportItem.pendingRuns--;
             reportItem.unstable = reportItem.unstable || testRun.unstable;
             reportItem.errs     = reportItem.errs.concat(testRun.errs);
-            reportItem.contexts = reportItem.contexts.concat(Object.assign({}, testRun.ctx, { userAgent: testRun.browserConnection.userAgent }));
+            reportItem.ctx      = reportItem.ctx.concat(Object.assign({}, testRun.ctx, { userAgent: testRun.browserConnection.userAgent }));
 
             if (!reportItem.pendingRuns) {
                 if (task.screenshots.hasCapturedFor(testRun.test)) {
@@ -114,6 +116,8 @@ export default class Reporter {
                         return result;
                     }, {});
                 }
+
+                reportItem.fixtureCtx = testRun.fixtureCtx;
 
                 if (!reportItem.testRunInfo) {
                     reportItem.testRunInfo = Reporter._createTestRunInfo(reportItem);
