@@ -68,7 +68,7 @@
     "chai": "^3.0.0",
     "chalk": "^1.1.0",
     "chrome-emulated-devices-list": "^0.1.0",
-    "chrome-remote-interface": "^0.25.3",
+    "chrome-remote-interface": "^0.28.1",
     "commander": "^2.8.1",
     "debug": "^2.2.0",
     "dedent": "^0.4.0",
