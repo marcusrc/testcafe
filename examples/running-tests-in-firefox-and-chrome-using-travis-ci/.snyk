@@ -1,0 +1,53 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.21.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - testcafe > socket.io > debug:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > engine.io > debug:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-adapter > debug:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-client > debug:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-client > engine.io-client > debug:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-parser > debug:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-adapter > socket.io-parser > debug:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-client > socket.io-parser > debug:
+        patched: '2021-09-14T23:29:25.946Z'
+  'npm:mime:20170907':
+    - testcafe > mime:
+        patched: '2021-09-14T23:29:25.946Z'
+  'npm:ms:20170412':
+    - testcafe > socket.io > debug > ms:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > engine.io > debug > ms:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-adapter > debug > ms:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-client > debug > ms:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-client > engine.io-client > debug > ms:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-parser > debug > ms:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-adapter > socket.io-parser > debug > ms:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-client > socket.io-parser > debug > ms:
+        patched: '2021-09-14T23:29:25.946Z'
+  'npm:qs:20140806-1':
+    - testcafe > express > connect > qs:
+        patched: '2021-09-14T23:29:25.946Z'
+  'npm:tough-cookie:20160722':
+    - testcafe > tough-cookie:
+        patched: '2021-09-14T23:29:25.946Z'
+  'npm:ws:20160920':
+    - testcafe > socket.io > engine.io > ws:
+        patched: '2021-09-14T23:29:25.946Z'
+    - testcafe > socket.io > socket.io-client > engine.io-client > ws:
+        patched: '2021-09-14T23:29:25.946Z'
