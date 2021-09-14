@@ -4,7 +4,9 @@
   "description": "An example of how to run TestCafe tests in the cloud using Firefox and Chrome with Travis CI.",
   "main": "server.js",
   "scripts": {
-    "test": "testcafe chrome,firefox tests/index-test.js --app \"node server.js\""
+    "test": "testcafe chrome,firefox tests/index-test.js --app \"node server.js\"",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -18,9 +20,11 @@
   "homepage": "https://github.com/DevExpress/testcafe#readme",
   "dependencies": {
     "connect": "^3.4.1",
-    "serve-static": "^1.11.1"
+    "serve-static": "^1.11.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "testcafe": "*"
-  }
+  },
+  "snyk": true
 }
