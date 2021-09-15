@@ -4,7 +4,9 @@
   "description": "An example of how to run TestCafe tests in the cloud using Travis CI and Sauce Labs.",
   "main": "server.js",
   "scripts": {
-    "test": "testcafe \"saucelabs:Chrome@beta:Windows 10\" tests/index-test.js --app \"node server.js\""
+    "test": "testcafe \"saucelabs:Chrome@beta:Windows 10\" tests/index-test.js --app \"node server.js\"",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,12 @@
   "homepage": "https://github.com/DevExpress/testcafe#readme",
   "dependencies": {
     "connect": "^3.4.1",
-    "serve-static": "^1.11.1"
+    "serve-static": "^1.11.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "testcafe": "*",
     "testcafe-browser-provider-saucelabs": "^1.0.0"
-  }
+  },
+  "snyk": true
 }
