@@ -4,7 +4,9 @@
   "description": "An example of how to use TestCafe build-in assertions",
   "main": "test.js",
   "scripts": {
-    "test": "testcafe all test.js"
+    "test": "testcafe all test.js",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,9 @@
   "homepage": "https://github.com/DevExpress/testcafe#readme",
   "devDependencies": {
     "testcafe": "*"
+  },
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
   }
 }
