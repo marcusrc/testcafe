@@ -163,7 +163,7 @@
     "npm-auditor": "^1.1.1",
     "openssl-self-signed-certificate": "^1.1.6",
     "opn": "^4.0.2",
-    "publish-please": "^3.0.2",
+    "publish-please": "^5.0.0",
     "recursive-copy": "^2.0.5",
     "request": "^2.58.0",
     "run-sequence": "^1.2.2",
