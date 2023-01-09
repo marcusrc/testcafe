@@ -70,7 +70,7 @@
     "chrome-emulated-devices-list": "^0.1.0",
     "chrome-remote-interface": "^0.25.3",
     "commander": "^2.8.1",
-    "debug": "^2.2.0",
+    "debug": "^3.1.0",
     "dedent": "^0.4.0",
     "elegant-spinner": "^1.0.1",
     "endpoint-utils": "^1.0.2",
