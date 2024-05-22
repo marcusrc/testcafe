@@ -135,7 +135,7 @@
     "eslint-plugin-hammerhead": "0.1.10",
     "express": "^4.13.3",
     "express-ntlm": "^2.1.5",
-    "gulp": "^4.0.0",
+    "gulp": "^5.0.0",
     "gulp-babel": "^6.1.1",
     "gulp-clone": "^2.0.1",
     "gulp-eslint": "^4.0.0",
