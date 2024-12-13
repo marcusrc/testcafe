@@ -88,7 +88,7 @@
     "moment": "^2.10.3",
     "moment-duration-format": "^2.2.2",
     "mustache": "^2.1.2",
-    "nanoid": "^1.0.1",
+    "nanoid": "^3.3.8",
     "node-version": "^1.0.0",
     "os-family": "^1.0.0",
     "parse5": "^1.5.0",
