@@ -159,7 +159,7 @@
     "markdownlint": ">=0.0.8",
     "merge-stream": "^1.0.1",
     "minimist": "^1.2.0",
-    "multer": "^1.1.0",
+    "multer": "^2.0.0",
     "npm-auditor": "^1.1.1",
     "openssl-self-signed-certificate": "^1.1.6",
     "opn": "^4.0.2",
