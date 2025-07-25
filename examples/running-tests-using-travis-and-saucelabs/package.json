@@ -22,6 +22,6 @@
   },
   "devDependencies": {
     "testcafe": "*",
-    "testcafe-browser-provider-saucelabs": "^1.0.0"
+    "testcafe-browser-provider-saucelabs": "^3.0.0"
   }
 }
