@@ -114,7 +114,7 @@
     "testcafe-reporter-spec": "^2.1.1",
     "testcafe-reporter-xunit": "^2.1.0",
     "time-limit-promise": "^1.0.2",
-    "tmp": "0.0.28",
+    "tmp": "0.2.4",
     "tree-kill": "^1.1.0",
     "typescript": "^2.2.2",
     "useragent": "^2.1.7"
@@ -163,7 +163,7 @@
     "npm-auditor": "^1.1.1",
     "openssl-self-signed-certificate": "^1.1.6",
     "opn": "^4.0.2",
-    "publish-please": "^3.0.2",
+    "publish-please": "^4.0.0",
     "recursive-copy": "^2.0.5",
     "request": "^2.58.0",
     "run-sequence": "^1.2.2",
